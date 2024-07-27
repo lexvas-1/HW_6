@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 
+import static com.codeborne.selenide.Condition.cssValue;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -22,6 +23,8 @@ public class RegistrationPage {
     private final SelenideElement selectCity = $("#stateCity-wrapper");
     private final SelenideElement submit = $("#submit");
     private final SelenideElement table = $(".table");
+    private final SelenideElement genderColor = $("[for=gender-radio-1]");
+    public String redText = "rgba(220, 53, 69, 1)";
     CalendarComponent calendarComponent = new CalendarComponent();
 
     public RegistrationPage openPage() {
@@ -131,5 +134,15 @@ public class RegistrationPage {
         return this;
     }
 
+    public RegistrationPage checkValidateGender(String value) {
+        genderColor.shouldHave(cssValue("color", redText));
 
+        return this;
+    }
+
+    public RegistrationPage checkValidatePhoneNumber(String value) {
+        userNumberInput.shouldHave(cssValue("border-bottom-color", redText));
+
+        return this;
+    }
 }
