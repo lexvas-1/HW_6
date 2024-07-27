@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
+import pages.components.ResultComponent;
 
 import static com.codeborne.selenide.Condition.cssValue;
 import static com.codeborne.selenide.Condition.text;
@@ -22,10 +23,10 @@ public class RegistrationPage {
     private final SelenideElement selectState = $("#stateCity-wrapper");
     private final SelenideElement selectCity = $("#stateCity-wrapper");
     private final SelenideElement submit = $("#submit");
-    private final SelenideElement table = $(".table");
     private final SelenideElement genderColor = $("[for=gender-radio-1]");
     public String redText = "rgba(220, 53, 69, 1)";
     CalendarComponent calendarComponent = new CalendarComponent();
+    ResultComponent resultComponent = new ResultComponent();
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
@@ -128,8 +129,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage checkTable(String value) {
-        table.shouldHave(text(value));
+    public RegistrationPage checkResult(String valueResult) {
+        resultComponent.checkTable(valueResult);
 
         return this;
     }

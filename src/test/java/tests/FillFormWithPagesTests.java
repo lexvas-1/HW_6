@@ -29,16 +29,16 @@ class FillFormWithPagesTests extends TestBase {
 
                 .submit()
 
-                .checkTable("Student Name Alexander Volodin")
-                .checkTable("Student Email lex@test.ru")
-                .checkTable("Gender Male")
-                .checkTable("Mobile 7123456789")
-                .checkTable("Date of Birth 14 December,1989")
-                .checkTable("Subjects Chemistry")
-                .checkTable("Hobbies 	Sports")
-                .checkTable("Picture image.jpg")
-                .checkTable("Address Lenina Street, 1a")
-                .checkTable("State and City Rajasthan Jaiselmer");
+                .checkResult("Student Name Alexander Volodin")
+                .checkResult("Student Email lex@test.ru")
+                .checkResult("Gender Male")
+                .checkResult("Mobile 7123456789")
+                .checkResult("Date of Birth 14 December,1989")
+                .checkResult("Subjects Chemistry")
+                .checkResult("Hobbies 	Sports")
+                .checkResult("Picture image.jpg")
+                .checkResult("Address Lenina Street, 1a")
+                .checkResult("State and City Rajasthan Jaiselmer");
 
     }
 
@@ -70,9 +70,9 @@ class FillFormWithPagesTests extends TestBase {
 
                 .submit()
 
-                .checkTable("Student Name Alexander Volodin")
-                .checkTable("Gender Male")
-                .checkTable("Mobile 1234567890");
+                .checkResult("Student Name Alexander Volodin")
+                .checkResult("Gender Male")
+                .checkResult("Mobile 1234567890");
 
 
     }
